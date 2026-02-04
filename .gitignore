@@ -1,0 +1,5 @@
+bin
+tuido
+.tuido
+*.md
+!README.md
