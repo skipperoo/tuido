@@ -1,9 +1,11 @@
 .PHONY: build test install clean
 
 BINARY_NAME=tuido
+BIN_DIR=bin
 
 build:
-	go build -o $(BINARY_NAME) ./cmd/tuido
+	mkdir -p $(BIN_DIR)
+	go build -o $(BIN_DIR)/$(BINARY_NAME) .
 
 test:
 	go test ./...
@@ -12,4 +14,4 @@ install: build
 	sudo install -m 0755 $(BINARY_NAME) /usr/local/bin/$(BINARY_NAME)
 
 clean:
-	rm -f $(BINARY_NAME)
+	rm -f $(BIN_DIR)
