@@ -445,7 +445,7 @@ func (m model) viewMain() string {
 	help := cGray.Render(" Type to add note | /todo [text] | /help | /exit")
 
 	if m.msg != "" {
-		help = cRed.Render(m.msg) + "\n" + help
+		help = cCyan.Render(m.msg) + "\n" + help
 	}
 
 	return lipgloss.JoinVertical(lipgloss.Left,
@@ -510,4 +510,3 @@ func main() {
 		os.Exit(1)
 	}
 }
-
