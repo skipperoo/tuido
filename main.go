@@ -82,7 +82,7 @@ func initialModel() model {
 
 	// Determine CWD and File Path
 
-cwd, err := os.Getwd()
+	cwd, err := os.Getwd()
 	if err != nil {
 		fmt.Printf("Error getting CWD: %v\n", err)
 		os.Exit(1)
@@ -434,7 +434,7 @@ func (m model) View() string {
 
 func (m model) viewMain() string {
 	title := cMagenta.Render(`
-	_______    _ _____        
+	 _______    _ _____        
 	|__   __|  (_)  __ \       
 	   | |_   _ _| |  | | ___  
 	   | | | | | | |  | |/ _ \ 
@@ -495,11 +495,11 @@ func (m model) viewTaskSelect() string {
 			ss += line + "\n"
 		}
 	}
-	
+
 	if m.selectionMode == modeRemove {
 		ss += "\n" + cGray.Render("Space to toggle | Enter to remove selected")
 	}
-	
+
 	return ss
 }
 
@@ -510,3 +510,4 @@ func main() {
 		os.Exit(1)
 	}
 }
+
